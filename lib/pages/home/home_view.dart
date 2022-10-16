@@ -12,13 +12,15 @@ class HomePage extends StatelessWidget {
 
     List<Widget> pages = [
       BlocProvider(
-          create: (context){return MainBloc();},
+          create: (context){return MainBloc()..add(LoadEvent());},
           child: const MainPage(),
       ),
       const Center(
         child: Text('в разработке'),
       ),
-      Container(),
+      const Center(
+        child: Text('в разработке'),
+      ),
     ];
 
     return Scaffold(

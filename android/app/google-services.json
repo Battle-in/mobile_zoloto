@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "921074003255",
+    "project_id": "zoloto-hack",
+    "storage_bucket": "zoloto-hack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921074003255:android:5c7150586a293ac4f23eb2",
+        "android_client_info": {
+          "package_name": "com.example.polus_hack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921074003255-bsmj1a2thff3ak8jfl8f9ikeln0tlvdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOUDj2we5EsXUIaXPojymM9G24BL8nTN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921074003255-bsmj1a2thff3ak8jfl8f9ikeln0tlvdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
