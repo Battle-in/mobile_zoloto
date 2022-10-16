@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:polus_hack/models/driver_request.dart';
+import 'package:polus_hack/pages/request/request_view.dart';
 
 class RequestTile extends StatelessWidget {
   const RequestTile(this.driverRequest, {Key? key}) : super(key: key);
@@ -9,24 +10,28 @@ class RequestTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      width: 344,
-      margin: const EdgeInsets.symmetric(horizontal: 15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        //border: Border.all(color: Colors.black),
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.yellow.shade300,
-            Colors.yellowAccent.shade100
-          ]
+    return InkWell(
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RequestPage(driverRequest))),
+      borderRadius: BorderRadius.circular(8),
+      child: Container(
+        height: 100,
+        width: 344,
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          //border: Border.all(color: Colors.black),
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.yellow.shade300,
+                Colors.yellowAccent.shade100
+              ]
+          ),
         ),
-      ),
-      child: Center(
-        child: Text('${driverRequest.startTime.hour}.${driverRequest.startTime.minute} - ${driverRequest.endTime.hour}.${driverRequest.endTime.minute}', style: const TextStyle(fontSize: 36, color: Colors.black, fontWeight: FontWeight.bold),),
+        child: Center(
+          child: Text('${driverRequest.startTime.hour}.${driverRequest.startTime.minute} - ${driverRequest.endTime.hour}.${driverRequest.endTime.minute}', style: const TextStyle(fontSize: 36, color: Colors.black, fontWeight: FontWeight.bold),),
+        ),
       ),
     );
   }

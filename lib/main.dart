@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:native_notify/native_notify.dart';
-import 'package:flutter/material.dart';
 import 'package:polus_hack/app.dart';
 
 void main()async{

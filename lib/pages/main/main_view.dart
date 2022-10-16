@@ -18,6 +18,7 @@ class MainPage extends StatelessWidget {
             centerTitle: true,
             title: const Text('Запросы'),
             bottom: const TabBar(
+              indicator: UnderlineTabIndicator(borderSide: BorderSide(width: 2, color: Colors.orange)),
               tabs: [
                 Tab(
                   text: 'на сегодня',
@@ -30,7 +31,7 @@ class MainPage extends StatelessWidget {
           ),
           body: TabBarView(
             physics: const BouncingScrollPhysics(),
-            children: [_buildRequests(), _otherDate()],
+            children: [_buildRequests(), _otherDate(context)],
           ),
         ));
   }
@@ -44,7 +45,7 @@ class MainPage extends StatelessWidget {
       } else {
         return ListView.separated(
             itemBuilder: (ctx, index) => RequestTile(DriverRequest(0, '', DateTime.now(), DateTime.now(), '')),
-            separatorBuilder: (ctx, index) => SizedBox(
+            separatorBuilder: (ctx, index) => const SizedBox(
                   height: 15,
                 ),
             itemCount: 30);
@@ -52,10 +53,20 @@ class MainPage extends StatelessWidget {
     });
   }
 
-  Widget _otherDate() {
+  Widget _otherDate(BuildContext context) {
     return BlocBuilder<MainBloc, MainState>(builder: (BuildContext context, MainState state) {
-      return const Center(
-        child: CircularProgressIndicator(),
+      return Center(
+        child: Container(
+          decoration: BoxDecoration(
+              color: Colors.yellowAccent,
+            borderRadius: BorderRadius.circular(8)
+          ),
+          width: 200,
+          child: TextButton(
+            child: const Text('Выбрать дату', style: TextStyle(fontSize: 18, color: Colors.black),),
+            onPressed: (){},
+          ),
+        ),
       );
     });
   }

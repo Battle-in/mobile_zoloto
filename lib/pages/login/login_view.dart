@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('polus', style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),),
+          const Text('polus', style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             height: 200,
@@ -27,14 +27,14 @@ class LoginPage extends StatelessWidget {
           ),
           Container(
 
-            width: 100,
+            width: 200,
             decoration: BoxDecoration(
               color: Colors.yellow,
               borderRadius: BorderRadius.circular(8)
             ),
             child: TextButton(
-              onPressed: () => Navigator.pushNamed(context, '/home'),
-              child: const Text('Войти', style: TextStyle(color: Colors.black, fontSize: 24),),
+              onPressed: () => Navigator.pushReplacementNamed(context, '/set_car'),
+              child: const Text('Перейти к выбору транспорта', style: TextStyle(color: Colors.black, fontSize: 16), textAlign: TextAlign.center,),
             ),
           )
         ],

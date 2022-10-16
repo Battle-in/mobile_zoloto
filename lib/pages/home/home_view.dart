@@ -13,13 +13,13 @@ class HomePage extends StatelessWidget {
     List<Widget> pages = [
       BlocProvider(
           create: (context){return MainBloc()..add(LoadEvent());},
-          child: const MainPage(),
+          child: MainPage(),
       ),
       const Center(
-        child: Text('в разработке'),
+        child: Text('чат\nв разработке', textAlign: TextAlign.center,),
       ),
       const Center(
-        child: Text('в разработке'),
+        child: Text('профиль\nв разработке', textAlign: TextAlign.center,),
       ),
     ];
 
@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: BlocBuilder<HomeCubit, HomeState>(
         builder: (BuildContext ctx, HomeState state){
           return BottomNavigationBar(
+            selectedItemColor: Colors.yellowAccent,
             currentIndex: state.pageIndex,
             onTap: (newPageIndex) => ctx.read<HomeCubit>().setPageIndex(newPageIndex),
             items: const [
